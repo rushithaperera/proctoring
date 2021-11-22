@@ -3,6 +3,8 @@ window.addEventListener("load", function () {
   const clientID = "8b88Yarr";
   const clientSecret = "4vaNDdgPX3JuHkh";
   const testAttemptId = CryptoJS.lib.WordArray.random(5).toString();
+  
+  window.sessionStorage.setItem('proctorReferenceId', testAttemptId);
 
   const hashedTestAttemptId = CryptoJS.SHA256(testAttemptId + clientSecret).toString();
 
@@ -35,7 +37,6 @@ window.addEventListener("load", function () {
     try {
       autoProctorTest = await initAutoProctor(apSettings);
       document.getElementById("testStart").addEventListener("click", () => {
-        console.log('start');
         autoProctorTest.start();
       });
       document.getElementById("testEnd").addEventListener("click", () => {
