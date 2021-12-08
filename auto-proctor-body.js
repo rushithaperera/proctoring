@@ -40,6 +40,7 @@ window.addEventListener("load", function () {
             console.log('start');
             autoProctorTest.start();
           });
+	 console.log(document.getElementById("testEnd"));
           document.getElementById("testEnd").addEventListener("click", () => {
             autoProctorTest.stop();
           });
