@@ -8,6 +8,9 @@ window.addEventListener("load", function () {
 
       window.sessionStorage.setItem('proctorReferenceId', testAttemptId );
       window.sessionStorage.setItem('hashedTestAttemptId', hashedTestAttemptId);
+      
+      bool test = window.sessionStorage.getItem('isExamStarted');
+      console.log(test);
 
       const apSettings = {
         tenantId: clientID,
